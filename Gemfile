@@ -23,6 +23,7 @@ group :development, :test do
   gem 'pry-doc'
   gem 'pry-rails'
   gem 'pry-stack_explorer'
+  gem 'better_errors'
 end
 
 group :development do
