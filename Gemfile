@@ -47,3 +47,4 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # 追加分
 gem 'annotate'
+gem 'bootstrap-sass'
