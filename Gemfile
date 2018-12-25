@@ -19,6 +19,10 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'rubocop', require: false
+  gem 'pry-byebug'
+  gem 'pry-doc'
+  gem 'pry-rails'
+  gem 'pry-stack_explorer'
 end
 
 group :development do
