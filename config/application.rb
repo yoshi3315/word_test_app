@@ -15,5 +15,14 @@ module WordTestApp
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+
+    # デフォルトのlocaleを日本語(:ja)にする
+    config.i18n.default_locale = :ja
+
+    # 翻訳ファイルのディレクトを追加する場合は、次の行のコメントを外しパスを追加してください。
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
+
+    config.time_zone = 'Tokyo'
+    config.active_record.default_timezone = :local
   end
 end
