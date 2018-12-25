@@ -1,0 +1,33 @@
+Rails:
+  Enabled: true
+
+# 日本語でのコメントを許可
+AsciiComments:
+  Enabled: false
+
+# モジュール名::クラス名の定義を許可
+ClassAndModuleChildren:
+  Enabled: false
+
+# クラスにコメントを残さない
+Documentation:
+  Enabled: false
+
+# 行が長くても許可
+LineLength:
+  Enabled: false
+
+# ABCサイズの許容値
+Metrics/AbcSize:
+  Enabled: true
+  Max: 30
+
+AllCops:
+  TargetRubyVersion: 2.5.1
+  Exclude:
+    - 'db/schema.rb'
+    - 'config/**/*'
+    - 'script/**/*'
+    - 'bundle_bin/*'
+    - 'bin/*'
+    - !ruby/regexp /old_and_unused\.rb$/
