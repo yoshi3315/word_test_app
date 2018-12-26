@@ -35,6 +35,9 @@ ja:
       signup: "新規登録"
       login: "ログイン"
       logout: "ログアウト"
+      remember: "ブラウザに記憶させる"
+      name: "ユーザーID"
+      password: "パスワード"
     front:
       top: "ビスタポ"
       setting: "セッティング"
