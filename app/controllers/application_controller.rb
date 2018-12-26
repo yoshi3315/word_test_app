@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
+
+  include SessionsHelper
+
   # フォーム送信がエラーになった場合にリロードされるとルーティングエラーになるので対処する
 
   rescue_from ActiveRecord::RecordNotFound, ActionController::RoutingError, with: :error404
