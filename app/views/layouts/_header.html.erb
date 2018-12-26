@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top mb-5">
-  <%= link_to '単語帳アプリ', root_path, class: "navbar-brand" %>
+  <%= link_to t('views.nav.logo'), root_path, class: "navbar-brand" %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -7,25 +7,25 @@
   <div class="collapse navbar-collapse" id="navbarsExampleDefault">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <%= link_to 'Home', root_path, class: "nav-link" %>
+        <%= link_to t('views.nav.home'), root_path, class: "nav-link" %>
       </li>
       <li class="nav-item">
-        <%= link_to 'ユーザー新規登録', new_user_path, class: "nav-link" %>
+        <%= link_to t('views.user.new'), new_user_path, class: "nav-link" %>
       </li>
       <li class="nav-item">
-        <%= link_to '単語帳', '#', class: "nav-link" %>
+        <%= link_to t('views.nav.test'), '#', class: "nav-link" %>
       </li>
       <li class="nav-item">
-        <%= link_to 'ランキング', '#', class: "nav-link" %>
+        <%= link_to t('views.nav.rank'), '#', class: "nav-link" %>
       </li>
       <li class="nav-item">
-        <%= link_to '単語マスタ', '#', class: "nav-link" %>
+        <%= link_to t('views.nav.master'), '#', class: "nav-link" %>
       </li>
       <li class="nav-item">
-        <%= link_to 'ログイン', '#', class: "nav-link" %>
+        <%= link_to t('views.nav.login'), '#', class: "nav-link" %>
       </li>
       <li class="nav-item">
-        <%= link_to 'ログアウト', '#', class: "nav-link" %>
+        <%= link_to t('views.nav.logout'), '#', class: "nav-link" %>
       </li>
     </ul>
   </div>

@@ -12,9 +12,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to root_url, flash: {
-        success: 'ユーザー新規登録が完了しました！ようこそ単語帳へ！'
-      }
+      redirect_to root_url, flash: { success: t('views.flash.create_success') }
     else
       render 'new'
     end
