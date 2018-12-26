@@ -49,6 +49,6 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 # 追加分
 gem 'annotate'
 gem 'bootstrap'
+gem 'jquery-rails'
 gem 'kaminari'
 gem 'migration_comments'
-gem 'jquery-rails'
