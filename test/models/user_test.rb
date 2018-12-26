@@ -1,4 +1,14 @@
 # frozen_string_literal: true
+# == Schema Information
+#
+# Table name: users # ユーザーテーブル
+#
+#  id              :bigint(8)        not null, primary key
+#  name            :string                                 # ユーザーID
+#  password_digest :string                                 # 暗号化パスワード
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
 
 require 'test_helper'
 
