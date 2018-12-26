@@ -1,0 +1,20 @@
+# == Schema Information
+#
+# Table name: users # ユーザーテーブル
+#
+#  id              :bigint(8)        not null, primary key
+#  name            :string                                 # ユーザーID
+#  password_digest :string                                 # 暗号化パスワード
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  password_digest: MyString
+
+two:
+  name: MyString
+  password_digest: MyString

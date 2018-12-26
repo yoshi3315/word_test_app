@@ -1,0 +1,12 @@
+ja:
+  activerecord: &activerecord
+    models:
+      user:
+    attributes:
+      user:
+        name: "ユーザーID"
+        password: "パスワード"
+        password_confirmation: "パスワード(確認用)"
+        password_digest: "暗号化パスワード"
+  activemodel:
+  <<: activerecord

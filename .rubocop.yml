@@ -31,3 +31,4 @@ AllCops:
     - 'bundle_bin/*'
     - 'bin/*'
     - !ruby/regexp /old_and_unused\.rb$/
+    - 'db/migrate/20181226013001_regenerate_users.rb'

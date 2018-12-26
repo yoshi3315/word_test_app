@@ -1,0 +1,55 @@
+ja:
+  views:
+    pagination:
+      first: "&laquo; 最初"
+      last: "最後 &raquo;"
+      next: "次 &rsaquo;"
+      previous: "&lsaquo; 前"
+      truncate: "&hellip;"
+    default:
+      index:  "一覧"
+      show:   "閲覧"
+      new:    "新規作成"
+      create: "新規作成"
+      edit:   "編集"
+      update: "編集"
+      destroy: "削除"
+      search: "検索"
+    nav:
+      logo: "単語帳アプリ"
+      home: "ホーム"
+      test: "単語帳"
+      rank: "ランキング"
+      master: "単語マスタ"
+      login: "ログイン"
+      logout: "ログアウト"
+    user:
+      index: "アカウント一覧"
+      mypage: "マイページ"
+      show: "アカウント詳細"
+      edit: "アカウント編集"
+      new: "アカウント作成"
+      create: "アカウント作成"
+      update: "アカウント編集"
+    session:
+      signup: "新規登録"
+      login: "ログイン"
+      logout: "ログアウト"
+    front:
+      top: "ビスタポ"
+      setting: "セッティング"
+      help: 'ヘルプ'
+      help_page: 'ヘルプページ'
+    flash:
+      create_success: "登録いたしました"
+      create_danger: "登録に失敗しました"
+      update_success: "更新いたしました"
+      update_danger: "更新に失敗しました"
+      destroy_success: "削除いたしました"
+      destroy_danger: "削除に失敗しました"
+      login_success: "ログインしました"
+      login_danger: "ユーザー名またはパスワードが違います"
+      logout_success: "ログアウトしました"
+      non_logged_in_user: "ログインが必要です"
+      incorrect_user: "他のユーザー情報は変更できません"
+      logged_in_user: "ログイン済です"
