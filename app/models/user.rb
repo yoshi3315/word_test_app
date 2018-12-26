@@ -20,6 +20,8 @@ class User < ApplicationRecord
                        length: { minimum: 6 },
                        allow_nil: true
 
+  before_save :downcase_name
+
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
                                                 BCrypt::Engine.cost
@@ -38,5 +40,11 @@ class User < ApplicationRecord
   def forget
     update_attribute(:remember_digest, nil)
   end
+
+  private
+
+    def downcase_name
+      name.downcase!
+    end
 
 end
