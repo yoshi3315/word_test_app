@@ -31,6 +31,11 @@ ja:
       new: "アカウント作成"
       create: "アカウント作成"
       update: "アカウント編集"
+    session:
+      signup: "新規登録"
+      login: "ログイン"
+      logout: "ログアウト"
+      remember: "ブラウザに記憶させる"
     front:
       top: "ビスタポ"
       setting: "セッティング"
@@ -49,6 +54,3 @@ ja:
       non_logged_in_user: "ログインが必要です"
       incorrect_user: "他のユーザー情報は変更できません"
       logged_in_user: "ログイン済です"
-    application:
-      login: "ログイン"
-      remember: "ブラウザに記憶させる"
