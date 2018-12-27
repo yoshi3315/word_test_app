@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class SessionsController < ApplicationController
-  before_action :non_logged_in_user?, only: %i[new create]
-  before_action :logged_in_user?, only: %i[destroy]
+  before_action :redirect_logged_in_user_to_root_page, only: %i[new create]
+  before_action :redirect_non_logged_in_user_to_login_page, only: %i[destroy]
 
   def new; end
 
