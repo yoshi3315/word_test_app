@@ -9,24 +9,28 @@
       <li class="nav-item">
         <%= link_to t('views.nav.home'), root_path, class: "nav-link" %>
       </li>
-      <li class="nav-item">
-        <%= link_to t('views.user.new'), new_user_path, class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to t('views.nav.test'), '#', class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to t('views.nav.rank'), '#', class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to t('views.nav.master'), '#', class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to t('views.nav.login'), '#', class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to t('views.nav.logout'), '#', class: "nav-link" %>
-      </li>
+      <% if logged_in? %>
+        <li class="nav-item">
+          <%= link_to t('views.nav.test'), '#', class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to t('views.nav.rank'), '#', class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to t('views.nav.master'), '#', class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to t('views.nav.logout'), logout_path,
+                                           method: :delete, class: "nav-link" %>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to t('views.nav.login'), login_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to t('views.user.new'), new_user_path, class: "nav-link" %>
+        </li>
+      <% end %>
     </ul>
   </div>
 </nav>
