@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
+
+  before_action :non_logged_in_user, only: [:new, :create]
+
   def index
     @users = User.all
   end
