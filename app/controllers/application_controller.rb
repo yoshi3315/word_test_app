@@ -14,13 +14,12 @@ class ApplicationController < ActionController::Base
   private
 
   def logged_in_user
-    unless logged_in?
-      redirect_to login_url,
-                  flash: { danger: t('views.flash.non_logged_in_user') }
-    end
+    msg = t('views.flash.non_logged_in_user')
+    redirect_to login_url, flash: { danger: msg } unless logged_in?
   end
 
   def non_logged_in_user
-    redirect_to root_url, flash: { danger: t('views.flash.logged_in_user') } if logged_in?
+    msg = t('views.flash.logged_in_user')
+    redirect_to root_url, flash: { danger: msg } if logged_in?
   end
 end
