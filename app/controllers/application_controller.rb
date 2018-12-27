@@ -21,4 +21,10 @@ class ApplicationController < ActionController::Base
       end
     end
 
+    def non_logged_in_user
+      if logged_in?
+        redirect_to root_url, flash: { danger: t('views.flash.logged_in_user') }
+      end
+    end
+
 end
