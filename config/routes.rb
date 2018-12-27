@@ -4,9 +4,9 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create]
 
-  get  '/login',   to: 'sessions#new'
-  post '/login',   to: 'sessions#create'
-  delete '/logout', to: 'sessions#destroy'
+  get  '/login',   to: 'application#login'
+  post '/login',   to: 'application#login'
+  delete '/logout', to: 'application#logout'
 
   match '*path' => 'application#error404', via: :all
 end
