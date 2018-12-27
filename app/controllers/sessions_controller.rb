@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 class SessionsController < ApplicationController
+  before_action :non_logged_in_user?, only: %i[new create]
+  before_action :logged_in_user?, only: %i[destroy]
+
   def new; end
 
   def create
@@ -16,7 +19,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    log_out if logged_in?
+    log_out
     redirect_to root_url, flash: { success: t('views.flash.logout_success') }
   end
 end
