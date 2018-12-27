@@ -24,17 +24,19 @@ class User < ApplicationRecord
 
   before_save :downcase_name
 
-  def self.digest(string)
-    cost = if ActiveModel::SecurePassword.min_cost
-             BCrypt::Engine::MIN_COST
-           else
-             BCrypt::Engine.cost
-           end
-    BCrypt::Password.create(string, cost: cost)
-  end
-
-  def self.new_token
-    SecureRandom.urlsafe_base64
+  class << self
+    def digest(string)
+      cost = if ActiveModel::SecurePassword.min_cost
+               BCrypt::Engine::MIN_COST
+             else
+               BCrypt::Engine.cost
+             end
+      BCrypt::Password.create(string, cost: cost)
+    end
+  
+    def new_token
+      SecureRandom.urlsafe_base64
+    end
   end
 
   def remember
