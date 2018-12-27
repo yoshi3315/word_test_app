@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: users # ユーザーテーブル
@@ -33,7 +34,7 @@ class User < ApplicationRecord
              end
       BCrypt::Password.create(string, cost: cost)
     end
-  
+
     def new_token
       SecureRandom.urlsafe_base64
     end

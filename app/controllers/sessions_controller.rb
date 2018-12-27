@@ -22,5 +22,4 @@ class SessionsController < ApplicationController
     log_out
     redirect_to root_url, flash: { success: t('views.flash.logout_success') }
   end
-
 end
