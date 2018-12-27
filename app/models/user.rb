@@ -12,7 +12,6 @@
 #
 
 class User < ApplicationRecord
-
   attr_accessor :remember_token
 
   validates :name, presence: true,
@@ -56,5 +55,4 @@ class User < ApplicationRecord
   def downcase_name
     name.downcase!
   end
-
 end

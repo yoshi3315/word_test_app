@@ -1,5 +1,6 @@
-class SessionsController < ApplicationController
+# frozen_string_literal: true
 
+class SessionsController < ApplicationController
   def new; end
 
   def create
@@ -18,5 +19,4 @@ class SessionsController < ApplicationController
     log_out if logged_in?
     redirect_to root_url, flash: { success: t('views.flash.logout_success') }
   end
-
 end

@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
-
   include SessionsHelper
 
   # フォーム送信がエラーになった場合にリロードされるとルーティングエラーになるので対処する
@@ -22,9 +21,6 @@ class ApplicationController < ActionController::Base
   end
 
   def non_logged_in_user
-    if logged_in?
-      redirect_to root_url, flash: { danger: t('views.flash.logged_in_user') }
-    end
+    redirect_to root_url, flash: { danger: t('views.flash.logged_in_user') } if logged_in?
   end
-
 end
