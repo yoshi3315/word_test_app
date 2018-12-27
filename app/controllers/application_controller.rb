@@ -3,8 +3,6 @@
 class ApplicationController < ActionController::Base
   include SessionsHelper
 
-  before_action :redirect_logged_in_user_to_root_page, only: %i[new create]
-
   # フォーム送信がエラーになった場合にリロードされるとルーティングエラーになるので対処する
 
   rescue_from ActiveRecord::RecordNotFound, ActionController::RoutingError, with: :error404
