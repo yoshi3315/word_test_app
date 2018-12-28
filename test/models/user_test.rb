@@ -9,6 +9,7 @@
 #  password_digest :string                                 # 暗号化パスワード
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  remember_digest :string                                 # 暗号化記憶トークン
 #
 
 require 'test_helper'

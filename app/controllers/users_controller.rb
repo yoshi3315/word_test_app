@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
-  before_action :non_logged_in_user, only: %i[new create]
+  before_action :redirect_logged_in_user_to_root_page, only: %i[new create]
 
   def index
     @users = User.all

@@ -6,12 +6,12 @@
     <div class="col-md-6 offset-md-3">
 
       <div class='form-group'>
-        <%= f.label t('views.session.name') %>
+        <%= f.label User.human_attribute_name :name %>
         <%= f.text_field :name, class: 'form-control' %>
       </div>
 
       <div class='form-group'>
-        <%= f.label t('views.session.password') %>
+        <%= f.label User.human_attribute_name :password %>
         <%= f.password_field :password, class: 'form-control' %>
       </div>
 

@@ -36,8 +36,6 @@ ja:
       login: "ログイン"
       logout: "ログアウト"
       remember: "ブラウザに記憶させる"
-      name: "ユーザーID"
-      password: "パスワード"
     main:
       top: "ようこそ！単語帳アプリへ！"
     flash:
