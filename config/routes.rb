@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'users#index'
+  root 'questions#main'
 
   resources :users, only: [:new, :create]
 

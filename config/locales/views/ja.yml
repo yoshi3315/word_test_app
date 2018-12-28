@@ -36,11 +36,8 @@ ja:
       login: "ログイン"
       logout: "ログアウト"
       remember: "ブラウザに記憶させる"
-    front:
-      top: "ビスタポ"
-      setting: "セッティング"
-      help: 'ヘルプ'
-      help_page: 'ヘルプページ'
+    main:
+      top: "ようこそ！単語帳アプリへ！"
     flash:
       create_success: "登録いたしました"
       create_danger: "登録に失敗しました"
