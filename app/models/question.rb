@@ -12,6 +12,8 @@
 #
 
 class Question < ApplicationRecord
+  has_many :question_similar_words, dependent: :destroy
+
   with_options presence: true do
     validates :question
     validates :description
