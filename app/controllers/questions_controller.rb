@@ -36,7 +36,7 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
-    Question.find(id: params[:id]).destroy
+    Question.find(params[:id]).destroy
     redirect_to questions_url,
                 flash: { success: t('views.flash.destroy_success') }
   end

@@ -15,6 +15,7 @@ ja:
       update: "編集"
       destroy: "削除"
       search: "検索"
+      confirm: "よろしいですか？"
     nav:
       logo: "単語帳アプリ"
       home: "ホーム"

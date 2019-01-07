@@ -4,7 +4,11 @@
 
 <ul>
   <% @questions.each do |question| %>
-    <li><%= question.question %></li>
-    <li><%= question.description %></li>
+    <li><%= question.question %> : <%= question.description %></li>
+    <%= link_to t("views.#{object_name}.edit"), edit_question_path(question) %>
+    <%= link_to t("views.#{object_name}.destroy"),
+                question,
+                method: :delete, 
+                data: { confirm: t("views.default.confirm") } %>
   <% end %>
 </ul>
