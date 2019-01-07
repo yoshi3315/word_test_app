@@ -11,7 +11,6 @@
 #  updated_at  :datetime         not null
 #
 
-
 class Question < ApplicationRecord
   with_options presence: true do
     validates :question
