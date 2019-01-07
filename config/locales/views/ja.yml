@@ -15,6 +15,7 @@ ja:
       update: "編集"
       destroy: "削除"
       search: "検索"
+      confirm: "よろしいですか？"
     nav:
       logo: "単語帳アプリ"
       home: "ホーム"
@@ -51,3 +52,10 @@ ja:
       non_logged_in_user: "ログインが必要です"
       incorrect_user: "他のユーザー情報は変更できません"
       logged_in_user: "ログイン済です"
+    question:
+      index: "単語一覧"
+      new: "単語登録"
+      create: "単語登録"
+      edit: "単語編集"
+      update: "単語編集"
+      destroy: "単語削除"

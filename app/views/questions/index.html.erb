@@ -1,0 +1,41 @@
+<% object_name = controller_name.singularize %>
+
+<h1><%= t("views.#{object_name}.index") %></h1>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col"><%= Question.human_attribute_name :id %></th>
+      <th scope="col"><%= Question.human_attribute_name :question %></th>
+      <th scope="col"><%= Question.human_attribute_name :description %></th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @questions.each do |question| %>
+      <tr>
+        <th scope="row"><%= question.id %></th>
+        <td><%= question.question %></td>
+        <td><%= question.description %></td>
+        <td>
+          <%= link_to t("views.#{object_name}.edit"),
+                      edit_question_path(question),
+                      class: 'btn btn-outline-success' %>
+        </td>
+        <td>
+          <%= link_to t("views.#{object_name}.destroy"),
+                      question,
+                      method: :delete, 
+                      data: { confirm: t("views.default.confirm") },
+                      class: 'btn btn-outline-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t("views.#{object_name}.new"),
+            new_question_path,
+            class: 'btn btn-primary btn-lg' %>
+<%= link_to t('views.nav.home'), root_path, class: 'btn btn-secondary btn-lg' %>

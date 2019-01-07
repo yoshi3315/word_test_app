@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_27_045004) do
+ActiveRecord::Schema.define(version: 2019_01_07_042704) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "questions", comment: "単語マスタ", force: :cascade do |t|
+    t.string "question", comment: "単語"
+    t.text "description", comment: "和訳"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", comment: "ユーザーテーブル", force: :cascade do |t|
     t.string "name", comment: "ユーザーID"

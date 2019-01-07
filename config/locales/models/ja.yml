@@ -2,11 +2,15 @@ ja:
   activerecord: &activerecord
     models:
       user:
+      question:
     attributes:
       user:
         name: "ユーザーID"
         password: "パスワード"
         password_confirmation: "パスワード(確認用)"
         password_digest: "暗号化パスワード"
+      question:
+        question: "単語"
+        description: "和訳"
   activemodel:
   <<: activerecord
