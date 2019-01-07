@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class QuestionsController < ApplicationController
+  before_action :redirect_non_logged_in_user_to_login_page, except: %i[main]
+
   def main; end
 
   def index
