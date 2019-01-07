@@ -8,5 +8,7 @@ Rails.application.routes.draw do
   post '/login',   to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
+  resources :questions
+
   match '*path' => 'application#error404', via: :all
 end
