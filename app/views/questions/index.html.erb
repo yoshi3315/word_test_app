@@ -1,0 +1,10 @@
+<% object_name = controller_name.singularize %>
+
+<h1><%= t("views.#{object_name}.index") %></h1>
+
+<ul>
+  <% @questions.each do |question| %>
+    <li><%= question.question %></li>
+    <li><%= question.description %></li>
+  <% end %>
+</ul>
