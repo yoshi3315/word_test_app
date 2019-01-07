@@ -35,6 +35,12 @@ class QuestionsController < ApplicationController
     end
   end
 
+  def destroy
+    Question.find(id: params[:id]).destroy
+    redirect_to questions_url,
+                flash: { success: t('views.flash.destroy_success') }
+  end
+
   private
 
   def question_params
