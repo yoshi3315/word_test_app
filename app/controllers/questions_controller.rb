@@ -25,6 +25,16 @@ class QuestionsController < ApplicationController
     @question = Question.find_by(id: params[:id])
   end
 
+  def update
+    @question = Question.find_by(id: params[:id])
+    if @question.update(question_params)
+      redirect_to questions_url,
+                  flash: { success: t('views.flash.update_success') }
+    else
+      render 'edit'
+    end
+  end
+
   private
 
   def question_params
