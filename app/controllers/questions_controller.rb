@@ -49,10 +49,10 @@ class QuestionsController < ApplicationController
     params.require(:question).permit(
       :question,
       :description,
-      question_similar_words_attributes: [
-        :id,
-        :similar_word,
-        :_destroy
+      question_similar_words_attributes: %i[
+        id
+        similar_word
+        _destroy
       ]
     )
   end
