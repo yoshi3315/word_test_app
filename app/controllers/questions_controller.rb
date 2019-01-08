@@ -51,7 +51,6 @@ class QuestionsController < ApplicationController
       :description,
       question_similar_words_attributes: [
         :id,
-        :question_id,
         :similar_word,
         :_destroy
       ]

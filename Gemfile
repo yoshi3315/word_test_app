@@ -53,3 +53,4 @@ gem 'jquery-rails'
 gem 'kaminari'
 gem 'migration_comments'
 gem 'cocoon'
+gem "jquery-rails"
