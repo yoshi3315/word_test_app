@@ -46,6 +46,15 @@ class QuestionsController < ApplicationController
   private
 
   def question_params
-    params.require(:question).permit(:question, :description)
+    params.require(:question).permit(
+      :question,
+      :description,
+      question_similar_words_attributes: [
+        :id,
+        :question_id,
+        :similar_word,
+        :_destroy
+      ]
+    )
   end
 end
