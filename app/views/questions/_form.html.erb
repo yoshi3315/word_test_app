@@ -22,7 +22,7 @@
           <%= render 'question_similar_word_fields', f: word %>
         <% end %>
         <div class='links'>
-          <%= link_to_add_association '仮でいれてます',
+          <%= link_to_add_association t('views.question_similar_word.new'),
                                       f,
                                       :question_similar_words,
                                       class: 'btn btn-primary btn-add' %>
