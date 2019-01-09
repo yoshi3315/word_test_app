@@ -1,0 +1,2 @@
+class TangoTestsController < ApplicationController
+end
