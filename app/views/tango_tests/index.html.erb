@@ -4,4 +4,13 @@
 
 <div class='mb-3'><%= @question.question %></div>
 
-<h2 class='text-body text-left mt-3'>解答</h2>
+<h2 class='text-body text-left mt-3 mb-3'>選択肢</h2>
+
+<div class='mb-3'>
+  <ul>
+    <li><%= @question.description %></li>
+    <% @dummies.each do |dummy| %>
+      <li><%= dummy.description %></li>
+    <% end %>
+  </ul>
+</div>

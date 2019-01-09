@@ -3,7 +3,9 @@ class TangoTestsController < ApplicationController
   before_action :questions_number_valid?
 
   def index
-    @question = Question.find(1)
+    question_id = rand(Question.count) + 1
+    @question = Question.find(question_id)
+    @dummies = Question.where.not(id: question_id).order("RANDOM()").limit(2)
   end
 
   private
