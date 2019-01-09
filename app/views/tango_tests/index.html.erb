@@ -8,9 +8,8 @@
 
 <div class='mb-3'>
   <ul>
-    <li><%= @question.description %></li>
-    <% @dummies.each do |dummy| %>
-      <li><%= dummy.description %></li>
+    <% @choices.shuffle.each do |choice| %>
+      <li><%= choice.description %></li>
     <% end %>
   </ul>
 </div>
