@@ -10,6 +10,8 @@ class TangoTestsController < ApplicationController
     @choices << @question
   end
 
+  def check; end
+
   private
 
   def questions_number_valid?
