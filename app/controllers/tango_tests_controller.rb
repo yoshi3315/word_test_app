@@ -3,11 +3,9 @@ class TangoTestsController < ApplicationController
   before_action :questions_number_valid?
 
   def index
-    question_id = rand(Question.count) + 1
-    @question = Question.find(question_id)
-    @dummies = Question.where.not(id: question_id).order("RANDOM()").limit(2)
-    @choices = Array(@dummies)
-    @choices << @question
+    @question = Question.all.sample
+    @dummies = Question.where.not(id: @question.id).sample(2)
+    @choices = (@dummies << @question).shuffle!
   end
 
   def check; end

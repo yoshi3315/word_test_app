@@ -8,12 +8,15 @@
 
 <div class='mb-3'>
   <%= form_with url: tango_tests_path do |f| %>
-    <% @choices.shuffle.each do |choice| %>
+    <% @choices.each do |choice| %>
       <div class="form-check">
         <%= f.radio_button :answer_id, choice.id, class: 'form-check-input' %>
         <%= f.label choice.description, class: 'form-check-label' %>
       </div>
     <% end %>
+
+    <%= hidden_field_tag :question_id, @question.id %>
+
     <%= f.submit '仮', class: 'btn btn-primary' %>
   <% end %>
 </div>
