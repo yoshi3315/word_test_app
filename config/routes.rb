@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
 
   resources :questions, except: [:show]
+  
+  get '/tango_tests', to: 'tango_tests#index'
 
   match '*path' => 'application#error404', via: :all
 end
