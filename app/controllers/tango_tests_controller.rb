@@ -5,7 +5,7 @@ class TangoTestsController < ApplicationController
   before_action :questions_number_valid?
 
   def index
-    previously_question_and_question_no_memory
+    function_of_remembering_already_used_questions_and_number_of_questions
 
     if session[:question_no] >= 50
       redirect_to root_url
@@ -23,7 +23,7 @@ class TangoTestsController < ApplicationController
     redirect_to root_url, flash: { danger: msg } unless Question.count >= 50
   end
 
-  def previously_question_and_question_no_memory
+  def function_of_remembering_already_used_questions_and_number_of_questions
     if request.xhr?
       session[:previously_question_id] << params[:question_id]
       session[:question_no] += 1
