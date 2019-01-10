@@ -1,4 +1,6 @@
-<%= "questions:#{session[:number_of_questions]}, corrects#{session[:correct_answers]}" %>
+<h2 class='text-body text-left mb-3'>
+  <%= "第#{session[:number_of_questions] + 1}問（全50問）" %>
+</h2>
 
 <h2 class='text-body text-left mb-3'>問題</h2>
 
@@ -19,6 +21,6 @@
 
     <%= hidden_field_tag :choices, @choices %>
 
-    <%= f.submit '仮', class: 'btn btn-primary' %>
+    <%= f.submit '解答', class: 'btn btn-primary' %>
   <% end %>
 </div>
