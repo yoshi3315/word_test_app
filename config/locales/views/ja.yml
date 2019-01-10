@@ -52,6 +52,7 @@ ja:
       non_logged_in_user: "ログインが必要です"
       incorrect_user: "他のユーザー情報は変更できません"
       logged_in_user: "ログイン済です"
+      number_danger: "テストに必要な数(50単語以上)の単語が登録されていません"
     question:
       index: "単語一覧"
       new: "単語登録"

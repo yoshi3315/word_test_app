@@ -7,3 +7,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+User.create!(name: 'test',
+             password: 'testtest',
+             password_confirmation: 'testtest')
+
+50.times do
+  content = Faker::DragonBall.character
+  Question.create!(question: content, description: content)
+end
