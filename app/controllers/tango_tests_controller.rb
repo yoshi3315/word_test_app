@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class TangoTestsController < ApplicationController
   before_action :redirect_non_logged_in_user_to_login_page
   before_action :questions_number_valid?
@@ -7,7 +9,7 @@ class TangoTestsController < ApplicationController
       session[:previously_question_id] << params[:question_id]
       session[:question_no] += 1
     else
-      session[:previously_question_id] = Array.new
+      session[:previously_question_id] = []
       session[:question_no] = 0
     end
 
