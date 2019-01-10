@@ -3,12 +3,22 @@ class TangoTestsController < ApplicationController
   before_action :questions_number_valid?
 
   def index
-    @question = Question.all.sample
-    @dummies = Question.where.not(id: @question.id).sample(2)
-    @choices = (@dummies << @question).shuffle!
-  end
+    if request.xhr?
+      session[:previously_question_id] << params[:question_id]
+      session[:question_no] += 1
+    else
+      session[:previously_question_id] = Array.new
+      session[:question_no] = 0
+    end
 
-  def check; end
+    if session[:question_no] >= 50
+      redirect_to root_url
+    else
+      @question = Question.where.not(id: session[:previously_question_id]).sample
+      @dummies = Question.where.not(id: @question.id).sample(2)
+      @choices = (@dummies << @question).shuffle!
+    end
+  end
 
   private
 
