@@ -6,6 +6,7 @@ class TangoTestsController < ApplicationController
 
   def index
     function_of_remembering_already_used_questions_and_number_of_questions
+    scoring
 
     if session[:number_of_questions] >= 50
       redirect_to root_url
@@ -33,6 +34,14 @@ class TangoTestsController < ApplicationController
     else
       session[:already_used_questions] = []
       session[:number_of_questions] = 0
+    end
+  end
+
+  def scoring
+    if request.xhr?
+      session[:correct_answers] += 1 if params[:question_id] == params[:answer_id]
+    else
+      session[:correct_answers] = 0
     end
   end
 end
