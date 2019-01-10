@@ -15,7 +15,7 @@ class TangoTestsController < ApplicationController
     else
       function_of_remembering_already_used_questions_and_number_of_questions
       scoring
-  
+
       if session[:number_of_questions] >= 50
         redirect_to root_url
       else
