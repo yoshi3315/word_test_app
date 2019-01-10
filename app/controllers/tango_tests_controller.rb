@@ -13,6 +13,10 @@ class TangoTestsController < ApplicationController
       @question = Question.where.not(id: session[:previously_question_id]).sample
       @dummies = Question.where.not(id: @question.id).sample(2)
       @choices = (@dummies << @question).shuffle!
+      respond_to do |format|
+        format.html
+        format.js
+      end
     end
   end
 
