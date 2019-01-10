@@ -23,8 +23,7 @@ class TangoTestsController < ApplicationController
   private
 
   def questions_number_valid?
-    msg = t('views.flash.number_danger')
-    redirect_to root_url, flash: { danger: msg } unless Question.count >= 50
+    redirect_to root_url, flash: { danger: t('views.flash.number_danger') } unless Question.count >= 50
   end
 
   def function_of_remembering_already_used_questions_and_number_of_questions
