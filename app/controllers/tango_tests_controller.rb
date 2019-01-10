@@ -7,12 +7,12 @@ class TangoTestsController < ApplicationController
   def index
     function_of_remembering_already_used_questions_and_number_of_questions
 
-    if session[:question_no] >= 50
+    if session[:number_of_questions] >= 50
       redirect_to root_url
     else
-      @question = Question.where.not(id: session[:already_used_questions]).sample
-      @dummies = Question.where.not(id: @question.id).sample(2)
-      @choices = (@dummies << @question).shuffle!
+      @correct = Question.where.not(id: session[:already_used_questions]).sample
+      @incorrects = Question.where.not(id: @correct.id).sample(2)
+      @choices = (@incorrects << @correct).shuffle!
     end
   end
 

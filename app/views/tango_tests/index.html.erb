@@ -2,7 +2,7 @@
 
 <h2 class='text-body text-left mb-3'>問題</h2>
 
-<div class='mb-3'><%= @question.question %></div>
+<div class='mb-3'><%= @correct.question %></div>
 
 <h2 class='text-body text-left mt-3 mb-3'>選択肢</h2>
 
@@ -15,7 +15,7 @@
       </div>
     <% end %>
 
-    <%= hidden_field_tag :question_id, @question.id %>
+    <%= hidden_field_tag :question_id, @correct.id %>
 
     <%= f.submit '仮', class: 'btn btn-primary' %>
   <% end %>
