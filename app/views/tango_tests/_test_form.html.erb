@@ -17,6 +17,8 @@
 
     <%= hidden_field_tag :question_id, @correct.id %>
 
+    <%= hidden_field_tag :choices, @choices %>
+
     <%= f.submit '仮', class: 'btn btn-primary' %>
   <% end %>
 </div>
