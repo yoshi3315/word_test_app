@@ -8,7 +8,7 @@ class TangoTestsController < ApplicationController
 
   def index
     if session[:number_of_questions] >= 50
-      redirect_to root_url
+      redirect_to ranks_url
     else
       set_question_and_choices
       respond_to do |format|
@@ -17,6 +17,8 @@ class TangoTestsController < ApplicationController
       end
     end
   end
+
+  def rank; end
 
   private
 
