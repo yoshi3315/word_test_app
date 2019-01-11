@@ -10,6 +10,7 @@ ja:
         password: "パスワード"
         password_confirmation: "パスワード(確認用)"
         password_digest: "暗号化パスワード"
+        highest_rate: "最高正解率"
       question:
         question: "単語"
         description: "和訳"
