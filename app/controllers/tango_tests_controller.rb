@@ -60,7 +60,8 @@ class TangoTestsController < ApplicationController
     elsif @rate > @user.highest_rate
       set_highest_rate
     end
-    redirect_to ranks_url, flash: { success: "お疲れ様でした！あなたの成績は、#{session[:number_of_questions]}問中#{session[:correct_answers]}問正解：正解率#{@rate}%でした！" }
+    @rank = User.where.not(highest_rate: nil).order('highest_rate desc').where('highest_rate > ?', @rate).count + 1
+    redirect_to ranks_url, flash: { success: "お疲れ様でした！あなたの成績は、#{session[:number_of_questions]}問中#{session[:correct_answers]}問正解：正解率#{@rate}%で#{@rank}位でした！" }
   end
 
   def set_highest_rate
