@@ -66,6 +66,8 @@ class TangoTestsController < ApplicationController
   end
 
   def set_highest_rate
-    redirect_to ranks_url, flash: { danger: t('views.flash.rate_danger') } unless @user.update(name: @user.name, remember_digest: @user.remember_digest, highest_rate: @rate)
+    redirect_to ranks_url, flash: { danger: t('views.flash.rate_danger') } unless @user.update(name: @user.name, \
+                                                                                               remember_digest: @user.remember_digest, \
+                                                                                               highest_rate: @rate)
   end
 end
