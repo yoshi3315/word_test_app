@@ -61,10 +61,11 @@ class TangoTestsController < ApplicationController
       set_highest_rate
     end
     @rank = User.where.not(highest_rate: nil).order('highest_rate desc').where('highest_rate > ?', @rate).count + 1
-    redirect_to ranks_url, flash: { success: "お疲れ様でした！あなたの成績は、#{session[:number_of_questions]}問中#{session[:correct_answers]}問正解：正解率#{@rate}%で#{@rank}位でした！" }
+    msg = "お疲れ様でした！あなたの成績は、#{session[:number_of_questions]}問中#{session[:correct_answers]}問正解：正解率#{@rate}%で#{@rank}位でした！"
+    redirect_to ranks_url, flash: { success: msg }
   end
 
   def set_highest_rate
-    redirect_to ranks_url, flash: { danger: '正解率の登録に失敗しました' } unless @user.update(name: @user.name, remember_digest: @user.remember_digest, highest_rate: @rate)
+    redirect_to ranks_url, flash: { danger: t('views.flash.rate_danger') } unless @user.update(name: @user.name, remember_digest: @user.remember_digest, highest_rate: @rate)
   end
 end

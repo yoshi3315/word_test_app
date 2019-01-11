@@ -53,6 +53,7 @@ ja:
       incorrect_user: "他のユーザー情報は変更できません"
       logged_in_user: "ログイン済です"
       number_danger: "テストに必要な数(50単語以上)の単語が登録されていません"
+      rate_danger: "正解率の登録に失敗しました"
     question:
       index: "単語一覧"
       new: "単語登録"
@@ -63,3 +64,8 @@ ja:
     question_similar_word:
       new: "類義語追加"
       destroy: "削除"
+    rank:
+      rank: "順位"
+      ranking: "ランキング"
+    tango_test:
+      answer: "解答"
