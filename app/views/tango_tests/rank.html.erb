@@ -1,1 +1,20 @@
 <h1>ランキング</h1>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">順位</th>
+      <th scope="col"><%= User.human_attribute_name :name %></th>
+      <th scope="col"><%= User.human_attribute_name :highest_rate %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each.with_index(1) do |user, index| %>
+      <tr>
+        <th scope="row"><%= index %></th>
+        <td><%= user.name %></td>
+        <td><%= user.highest_rate %>%</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
