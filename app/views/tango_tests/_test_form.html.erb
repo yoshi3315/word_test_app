@@ -12,7 +12,7 @@
   <%= form_with url: tango_tests_path do |f| %>
     <% @choices.each.with_index(1) do |choice, index| %>
       <div class="form-check">
-        <% if index == 1%>
+        <% if index == 1 %>
           <%= f.radio_button :answer_id, choice.id, class: 'form-check-input', checked: true %>
           <%= f.label choice.description, class: 'form-check-label' %>
         <% else %>
@@ -24,6 +24,6 @@
 
     <%= hidden_field_tag :question_id, @correct.id %>
 
-    <%= f.submit '解答', class: 'btn btn-primary' %>
+    <%= f.submit t('views.tango_test.answer'), class: 'btn btn-primary' %>
   <% end %>
 </div>

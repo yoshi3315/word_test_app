@@ -10,6 +10,7 @@
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #  remember_digest :string                                 # 暗号化記憶トークン
+#  highest_rate    :integer                                # 単語帳最高正解率
 #
 
 class User < ApplicationRecord
@@ -24,6 +25,8 @@ class User < ApplicationRecord
                        allow_nil: true
 
   before_save :downcase_name
+
+  scope :top_rankers, -> { where.not(highest_rate: nil).order('highest_rate desc').limit(10) }
 
   class << self
     def digest(string)

@@ -10,6 +10,7 @@
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #  remember_digest :string                                 # 暗号化記憶トークン
+#  highest_rate    :integer                                # 単語帳最高正解率
 #
 
 require 'test_helper'
