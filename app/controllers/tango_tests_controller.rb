@@ -18,7 +18,9 @@ class TangoTestsController < ApplicationController
     end
   end
 
-  def rank; end
+  def rank
+    @users = User.where.not(highest_rate: nil).order('highest_rate desc').limit(10)
+  end
 
   private
 
