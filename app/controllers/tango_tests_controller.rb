@@ -8,7 +8,7 @@ class TangoTestsController < ApplicationController
 
   def index
     if session[:number_of_questions] >= 50
-      redirect_to ranks_url
+      redirect_to_ranks_page
     else
       set_question_and_choices
       respond_to do |format|
@@ -48,5 +48,20 @@ class TangoTestsController < ApplicationController
     @correct = Question.where.not(id: session[:already_used_questions]).sample
     @incorrects = Question.where.not(id: @correct.id).sample(2)
     @choices = (@incorrects << @correct).shuffle!
+  end
+
+  def redirect_to_ranks_page
+    @rate = (session[:correct_answers].to_f / session[:number_of_questions].to_f * 100).round(0)
+    @user = @current_user
+    if @user.highest_rate.nil?
+      set_highest_rate
+    elsif @rate > @user.highest_rate
+      set_highest_rate
+    end
+    redirect_to ranks_url, flash: { success: "お疲れ様でした！あなたの成績は、#{session[:number_of_questions]}問中#{session[:correct_answers]}問正解：正解率#{@rate}%でした！" }
+  end
+
+  def set_highest_rate
+    redirect_to ranks_url, flash: { danger: '正解率の登録に失敗しました' } unless @user.update(name: @user.name, remember_digest: @user.remember_digest, highest_rate: @rate)
   end
 end
