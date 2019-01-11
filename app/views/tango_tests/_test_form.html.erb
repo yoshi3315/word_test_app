@@ -1,0 +1,29 @@
+<h2 class='text-body text-left mb-3'>
+  <%= "第#{session[:number_of_questions] + 1}問（全50問）" %>
+</h2>
+
+<h2 class='text-body text-left mb-3'>問題</h2>
+
+<div class='mb-3'><%= @correct.question %></div>
+
+<h2 class='text-body text-left mt-3 mb-3'>選択肢</h2>
+
+<div class='mb-3'>
+  <%= form_with url: tango_tests_path do |f| %>
+    <% @choices.each.with_index(1) do |choice, index| %>
+      <div class="form-check">
+        <% if index == 1%>
+          <%= f.radio_button :answer_id, choice.id, class: 'form-check-input', checked: true %>
+          <%= f.label choice.description, class: 'form-check-label' %>
+        <% else %>
+          <%= f.radio_button :answer_id, choice.id, class: 'form-check-input' %>
+          <%= f.label choice.description, class: 'form-check-label' %>
+        <% end %>
+      </div>
+    <% end %>
+
+    <%= hidden_field_tag :question_id, @correct.id %>
+
+    <%= f.submit '解答', class: 'btn btn-primary' %>
+  <% end %>
+</div>
