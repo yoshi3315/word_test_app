@@ -26,6 +26,8 @@ class User < ApplicationRecord
 
   before_save :downcase_name
 
+  scope :top_rankers, -> { where.not(highest_rate: nil).order('highest_rate desc').limit(10) }
+
   class << self
     def digest(string)
       cost = if ActiveModel::SecurePassword.min_cost

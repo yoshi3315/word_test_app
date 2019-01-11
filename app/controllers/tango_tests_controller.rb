@@ -19,7 +19,7 @@ class TangoTestsController < ApplicationController
   end
 
   def rank
-    @users = User.where.not(highest_rate: nil).order('highest_rate desc').limit(10)
+    @users = User.top_rankers
   end
 
   private
@@ -53,21 +53,13 @@ class TangoTestsController < ApplicationController
   end
 
   def redirect_to_ranks_page
-    @rate = (session[:correct_answers].to_f / session[:number_of_questions].to_f * 100).round(0)
-    @user = @current_user
-    if @user.highest_rate.nil?
-      set_highest_rate
-    elsif @rate > @user.highest_rate
-      set_highest_rate
-    end
-    @rank = User.where.not(highest_rate: nil).order('highest_rate desc').where('highest_rate > ?', @rate).count + 1
-    msg = "お疲れ様でした！あなたの成績は、#{session[:number_of_questions]}問中#{session[:correct_answers]}問正解：正解率#{@rate}%で#{@rank}位でした！"
-    redirect_to ranks_url, flash: { success: msg }
-  end
-
-  def set_highest_rate
-    redirect_to ranks_url, flash: { danger: t('views.flash.rate_danger') } unless @user.update(name: @user.name, \
-                                                                                               remember_digest: @user.remember_digest, \
-                                                                                               highest_rate: @rate)
+    @rate = (session[:correct_answers].to_f / 50 * 100).round(0)
+    @current_user.update(name: @current_user.name, highest_rate: @rate) if @current_user.highest_rate.nil? || @rate > @current_user.highest_rate
+    @rank = User.where('highest_rate > ?', @rate).count + 1
+    redirect_to ranks_url,
+                flash: { success: t('views.tango_test.success',
+                                    correct: session[:correct_answers],
+                                    rate: @rate,
+                                    rank: @rank) }
   end
 end

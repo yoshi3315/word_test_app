@@ -69,3 +69,4 @@ ja:
       ranking: "ランキング"
     tango_test:
       answer: "解答"
+      success: "お疲れ様でした！あなたの成績は、50問中%{correct}問正解：正解率%{rate}%で%{rank}位でした！"
