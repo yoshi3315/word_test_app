@@ -5,27 +5,18 @@ class TangoTestsController < ApplicationController
   before_action :questions_number_valid?
 
   def index
-    if request.xhr? && params[:answer_id].nil?
-      @correct = params[:question_id]
-      @choices = params[:choices]
+    function_of_remembering_already_used_questions_and_number_of_questions
+    scoring
+
+    if session[:number_of_questions] >= 50
+      redirect_to root_url
+    else
+      @correct = Question.where.not(id: session[:already_used_questions]).sample
+      @incorrects = Question.where.not(id: @correct.id).sample(2)
+      @choices = (@incorrects << @correct).shuffle!
       respond_to do |format|
         format.html
         format.js
-      end
-    else
-      function_of_remembering_already_used_questions_and_number_of_questions
-      scoring
-
-      if session[:number_of_questions] >= 50
-        redirect_to root_url
-      else
-        @correct = Question.where.not(id: session[:already_used_questions]).sample
-        @incorrects = Question.where.not(id: @correct.id).sample(2)
-        @choices = (@incorrects << @correct).shuffle!
-        respond_to do |format|
-          format.html
-          format.js
-        end
       end
     end
   end
