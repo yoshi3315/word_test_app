@@ -12,8 +12,13 @@
     <% @users.each.with_index(1) do |user, index| %>
       <tr>
         <th scope="row"><%= index %></th>
-        <td><%= user.name %></td>
-        <td><%= user.highest_rate %>%</td>
+        <% if user == @current_user %>
+          <td class='text-danger font-weight-bold'><%= user.name %></td>
+          <td class='text-danger font-weight-bold'><%= user.highest_rate %>%</td>
+        <% else %>
+          <td><%= user.name %></td>
+          <td><%= user.highest_rate %>%</td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
